@@ -1,57 +1,49 @@
 ﻿
 
 using System;
+using System.Drawing;
 
 namespace infinite_loop
 {
     class MainClass
     {
         public static void Main(string[] args)
-
         {
-            Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
-            Console.WriteLine("cписок доступных цветов:\n blue, \n magenta, \n yellow, \n black.");
-            Console.WriteLine();
+            Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы\n red, green,cyan");
 
             var color = Console.ReadLine();
-
-            if (color == "blue")
             {
-                Console.BackgroundColor = ConsoleColor.White;
-                Console.ForegroundColor = ConsoleColor.Blue;
+                switch (color)
+                {
+                    case "red":
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.ForegroundColor = ConsoleColor.Black;
 
-                Console.WriteLine("Your color is blue (on the white background)!");
-            }
+                        Console.WriteLine("Your color is red!");
+                        break;
 
-            else if (color == "magenta")
-            {
-                Console.BackgroundColor = ConsoleColor.Gray;
-                Console.ForegroundColor = ConsoleColor.Magenta;
+                    case "green":
+                        Console.BackgroundColor = ConsoleColor.Green;
+                        Console.ForegroundColor = ConsoleColor.Black;
 
-                Console.WriteLine("Your color is (on the gray background)!");
-            }
+                        Console.WriteLine("Your color is green!");
+                        break;
 
-            else if (color == "yellow")
-            {
-                Console.BackgroundColor = ConsoleColor.Black;
-                Console.ForegroundColor = ConsoleColor.Yellow;
+                    case "cyan":
+                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        Console.ForegroundColor = ConsoleColor.Black;
 
-                Console.WriteLine("Your color is yellow (on the black background)!");
-            }
+                        Console.WriteLine("Your color is cyan!");
+                        break;
 
-            else if (color == "black")
-            {
-                Console.BackgroundColor = ConsoleColor.DarkYellow;
-                Console.ForegroundColor = ConsoleColor.Black;
 
-                Console.WriteLine("Your color is black (on the DarkYellow background)!");
-            }
-            else
-            {
-                Console.BackgroundColor = ConsoleColor.DarkRed;
-                Console.ForegroundColor = ConsoleColor.Black;
+                    default:
+                        Console.BackgroundColor = ConsoleColor.Yellow;
+                        Console.ForegroundColor = ConsoleColor.Red;
 
-                Console.WriteLine("Your color is else (on the Darkred background)!");
+                        Console.WriteLine("Your color is default!");
+                        break;
+                }
             }
         }
     }
